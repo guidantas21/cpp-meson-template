@@ -24,3 +24,48 @@ Here is an explanation of what is each component:
 - `src/meson.build`: Configure source files for Meson;
 - `meson`: Configure Meson;
 - `README.md`: Documentation file in markdown;
+
+## Usage
+
+1. [Create a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
+
+2. Setup meson project name:
+
+In the `meson.build`, you can change your project name to whatever you want:
+
+```
+project(
+    "<project_name>",
+    ...
+)
+```
+
+3. Setup the meson build:
+
+Assuming that the `build/` is the release build directory:
+
+```
+meson setup build --buildtype=release
+```
+
+For debugging, setup a `build_debug/` directory:
+
+```
+meson setup build_debug --buildtype=debug
+```
+
+4. Compile and run builds
+
+Compile build:
+
+```
+meson compile -C <build_directory>
+```
+
+Run the executable:
+
+```
+./<build_directory>/<project_name>
+```
+
+5. Write a `README.md` for your project
