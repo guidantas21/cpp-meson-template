@@ -53,7 +53,7 @@ For debugging, setup a `build_debug/` directory:
 meson setup build_debug --buildtype=debug
 ```
 
-#### 4. Compile and run builds
+#### 4. Compile and run:
 
 Compile the build:
 
