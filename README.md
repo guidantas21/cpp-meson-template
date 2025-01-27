@@ -26,7 +26,7 @@ Here is an explanation of what is each component:
 - `README.md`: Documentation file in markdown;
 
 ## Usage
-#### 1. [Create a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)
+#### 1. [Create a repository from this template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template);
 
 #### 2. Setup meson project name:
 
@@ -55,14 +55,16 @@ meson setup build_debug --buildtype=debug
 
 #### 4. Compile and run builds
 
+Compile the build:
+
 ```
 meson compile -C <build_directory>
 ```
 
-Run the executable:
+Run the the executable:
 
 ```
 ./<build_directory>/<project_name>
 ```
 
-#### 5. Write a `README.md` for your project
+#### 5. Write a `README.md` for your project.
