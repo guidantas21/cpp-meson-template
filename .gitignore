@@ -35,3 +35,7 @@
 build/
 build_debug/
 build_release/
+
+# Others
+.cache/
+.vscode/
