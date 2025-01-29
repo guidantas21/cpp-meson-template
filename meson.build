@@ -17,7 +17,7 @@ subdir('src')
 
 # include directory -----
 
-# incdir = include_directories('include')
+incdir = include_directories('include')
 
 # compiler flags -----
 debug_flags = [
@@ -57,6 +57,6 @@ endif
 executable(
   meson.project_name(), 
   sources,
-  # include_directories : [incdir],
+  include_directories : [incdir],
 )
 
