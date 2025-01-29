@@ -50,6 +50,7 @@ optimization_flags = [
 if get_option('buildtype') == 'debug'
     add_project_arguments(debug_flags, language: 'cpp')
     add_project_arguments(sanitizers_flags, language: 'cpp')
+    add_project_link_arguments(sanitizers_flags, language: 'cpp')
 elif get_option('buildtype') == 'release'
     add_project_arguments(optimization_flags, language: 'cpp')
 endif
