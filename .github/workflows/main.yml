@@ -32,4 +32,4 @@ jobs:
         run: clang-tidy -p build src/*.cpp include/*.hpp -- -Iinclude
 
       - name: Run Clang-Format Check
-        run: clang-format -i --dry-run --Werror src/*.cpp include/*.hpp --verbose
+        run: clang-format --dry-run --Werror src/*.cpp include/*.hpp --verbose
