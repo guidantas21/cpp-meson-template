@@ -17,10 +17,10 @@ jobs:
         run: sudo apt update && sudo apt install -y ninja-build meson clang-tidy clang-format
 
       - name: Configure Meson debug build
-        run: meson setup build --buildtype=release
+        run: meson setup build_debug --buildtype=debug
       
       - name: Build debug
-        run: meson compile -C build
+        run: meson compile -C build_debug
 
       - name: Configure Meson release build
         run: meson setup build --buildtype=release
