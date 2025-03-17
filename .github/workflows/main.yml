@@ -29,7 +29,7 @@ jobs:
         run: meson compile -C build
 
       - name: Run Clang-Tidy
-        run: clang-tidy -p build src/*.cpp include/*.hpp -- -Iinclude
+        run: clang-tidy -p build {src/*.cpp,include/*.hpp} --use-color
 
       - name: Run Clang-Format Check
         run: clang-format --dry-run --Werror src/*.cpp include/*.hpp --verbose
