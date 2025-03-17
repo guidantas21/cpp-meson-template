@@ -1,7 +1,6 @@
 project(
   'project', 
   'cpp',
-  version : '0.1',
   default_options : [
     'buildtype=debug',
     'cpp_std=c++23',
@@ -47,12 +46,20 @@ optimization_flags = [
   '-DNDEBUG'
 ]
 
+
+if get_option('warning_level') == 'everything'
+  add_project_arguments(extra_warnings, language: 'cpp')
+endif
+
+if get_option('sanitizers') == true
+  add_project_arguments(sanitizers_flags, language: 'cpp')
+  add_project_link_arguments(sanitizers_flags, language: 'cpp')
+endif 
+
 if get_option('buildtype') == 'debug'
-    add_project_arguments(debug_flags, language: 'cpp')
-    add_project_arguments(sanitizers_flags, language: 'cpp')
-    add_project_link_arguments(sanitizers_flags, language: 'cpp')
+  add_project_arguments(debug_flags, language: 'cpp')
 elif get_option('buildtype') == 'release'
-    add_project_arguments(optimization_flags, language: 'cpp')
+  add_project_arguments(optimization_flags, language: 'cpp')
 endif
 
 executable(
