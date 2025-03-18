@@ -1,6 +1,7 @@
 # -- Dependencies -----
 
 dependencies = []
+incdir_deps = []
 
 # -- WrapDB packages -----
 
@@ -19,6 +20,10 @@ dependencies = []
 # benchmark_dep = dependency('benchmark' , required: true)
 # benchmark_main_dep = dependency('benchmark-main', required: true)
 # dependencies += [benchmark_dep, benchmark_main_dep]
+
+## Package name: fmt
+# fmt_dep = dependency('fmt', required: true)
+# dependencies += fmt_dep
 
 ## Package name: spdlog
 # spdlog_dep = dependency('spdlog', required: true)
@@ -40,3 +45,5 @@ dependencies = []
 # catch2_dep = dependency('catch2', required: true)
 # catch2_with_main_dep = dependency('catch2-with-main', required: true)
 # dependencies += [catch2_dep, catch2_with_main_dep]
+
+
