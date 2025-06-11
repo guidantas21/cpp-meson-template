@@ -8,7 +8,7 @@ executable(
   meson.project_name(), 
   sources,
   include_directories: [incdir, incdir_deps],
-  dependencies: dependencies,
+  dependencies: [dependencies, external_dependencies],
   install: true
 )
 

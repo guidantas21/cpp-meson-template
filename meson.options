@@ -1,1 +1,12 @@
-option('sanitizers', type: 'boolean', value: false, description: 'Enable sanitizers for debugging')
+option(
+  'sanitizers', 
+  type: 'boolean', 
+  value: false, 
+  description: 'Enable sanitizers for debugging'
+)
+# option(
+#   'ortools_root', 
+#   type: 'string', 
+#   value: '', 
+#   description: 'Path to OR-Tools installation'
+# )
