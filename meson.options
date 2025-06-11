@@ -4,9 +4,17 @@ option(
   value: false, 
   description: 'Enable sanitizers for debugging'
 )
+
 # option(
 #   'ortools_root', 
 #   type: 'string', 
 #   value: '', 
 #   description: 'Path to OR-Tools installation'
+# )
+
+# option(
+#   'cplex_root',
+#   type: 'string',
+#   description: 'Absolute path to the IBM ILOG CPLEX installation root',
+#   value: ''
 # )

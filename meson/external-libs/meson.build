@@ -56,3 +56,38 @@ external_dependencies = []
 #
 # external_dependencies += ortools_dep
 
+# ---- CPLEX ----- 
+
+# cplex_dep = dependency('cplex', required: false)
+#
+# if not cplex_dep.found()
+#   cplex_root = get_option('cplex_root')
+#
+#   if not cplex_root.startswith('/')
+#     error('cplex_root must be an absolute path.')
+#   endif
+#
+#   compiler = meson.get_compiler('cpp')
+#
+#   cplex_libdir = join_paths(cplex_root, 'cplex', 'lib', 'x86-64_linux', 'static_pic')
+#   concert_libdir = join_paths(cplex_root, 'concert', 'lib', 'x86-64_linux', 'static_pic')
+#   cplex_incdir = join_paths(cplex_root, 'cplex', 'include')
+#   concert_incdir = join_paths(cplex_root, 'concert', 'include')
+#
+#   cplex_lib = compiler.find_library('cplex', dirs: cplex_libdir)
+#   ilocplex_lib = compiler.find_library('ilocplex', dirs: cplex_libdir)
+#   concert_lib = compiler.find_library('concert', dirs: concert_libdir)
+#
+#   dl_dep = compiler.find_library('dl', required: true)
+#   threads_dep = dependency('threads')
+#
+#   cplex_inc = include_directories(cplex_incdir, concert_incdir)
+#
+#   cplex_dep = declare_dependency(
+#     dependencies: [cplex_lib, ilocplex_lib, concert_lib, threads_dep, dl_dep],
+#     include_directories: cplex_inc,
+#     link_args: ['-Wl,-rpath,' + cplex_libdir, '-Wl,-rpath,' + concert_libdir]
+#   )
+# endif
+#
+# external_dependencies += cplex_dep
