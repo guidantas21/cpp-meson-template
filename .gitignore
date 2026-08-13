@@ -35,6 +35,7 @@
 build/
 build_debug/
 build_release/
+build_sanitizers/
 
 # Others
 .cache/

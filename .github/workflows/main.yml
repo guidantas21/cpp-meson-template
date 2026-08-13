@@ -11,25 +11,34 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Install dependencies
-        run: sudo apt update && sudo apt install -y ninja-build meson clang-tidy clang-format
+        run: sudo apt update && sudo apt install -y ninja-build meson clang-tidy clang-format clang
 
       - name: Configure Meson debug build
         run: meson setup build_debug --buildtype=debug
-      
+
       - name: Build debug
         run: meson compile -C build_debug
 
       - name: Configure Meson release build
         run: meson setup build --buildtype=release
-      
+
       - name: Build release
         run: meson compile -C build
 
+      - name: Configure Meson sanitizers build (Clang)
+        run: CC=clang CXX=clang++ meson setup build_sanitizers --buildtype=debug -Dsanitizers=true
+
+      - name: Build sanitizers
+        run: meson compile -C build_sanitizers
+
+      - name: Run sanitizers build
+        run: ./build_sanitizers/project
+
       - name: Run Clang-Tidy
-        run: clang-tidy -p build {src/*.cpp,include/*.hpp} --use-color
+        run: bash scripts/lint.sh
 
       - name: Run Clang-Format Check
-        run: clang-format --dry-run --Werror src/*.cpp include/*.hpp --verbose
+        run: bash scripts/format.sh --check

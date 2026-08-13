@@ -5,12 +5,12 @@ incdir_deps = []
 
 # -- WrapDB packages -----
 
-# To add install a WrapDB package: 
+# To install a WrapDB package:
 #   1. Create the `subprojects` directory
-#   1. Run the command: `meson wrap install <package_name>`
-#   2. Add to the dependencies list
+#   2. Run the command: `meson wrap install <package_name>`
+#   3. Add to the dependencies list
 
-# Here are some useful WrapDB packges you might want to need (install and uncomment):
+# Here are some useful WrapDB packages you might need (install and uncomment):
 
 ## Package name: argparse -----
 # argparse_dep = dependency('argparse', required: true)
@@ -24,6 +24,10 @@ incdir_deps = []
 ## Package name: fmt
 # fmt_dep = dependency('fmt', required: true)
 # dependencies += fmt_dep
+
+## Package name: nlohmann_json
+# nlohmann_json_dep = dependency('nlohmann_json', required: true)
+# dependencies += nlohmann_json_dep
 
 ## Package name: spdlog
 # spdlog_dep = dependency('spdlog', required: true)
